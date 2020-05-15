@@ -9,7 +9,7 @@ public class prova {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int qntd, atraso, scorecompras, scoreinadimplencia, scorepagamento;
+		int qntd, atraso, scorecompras, scoreinadimplencia, scorepagamento, total;
 		double ticket, compras;
 		char pagamento;
 		scorecompras = 0;
@@ -75,7 +75,18 @@ public class prova {
 			scorepagamento = 10;
 		}
 		System.out.printf("Score de forma de pagamento = %d pontos%n", scorepagamento);
-
+		
+		//resultado final
+		total = scorecompras + scoreinadimplencia + scorepagamento;
+		if(total <= 25) {
+			System.out.printf("%nClassificação final = CLIENTE BRONZE");
+		}else {
+			if(total > 25 && total <= 75) {
+				System.out.printf("%nClassificação final = CLIENTE PRATA");
+			}else {
+				System.out.printf("%nClassificação final = CLIENTE OURO");
+			}
+		}
 		sc.close();
 	}
 
