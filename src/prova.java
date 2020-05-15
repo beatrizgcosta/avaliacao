@@ -46,7 +46,7 @@ public class prova {
 				}
 				else {
 					if(compras > 3000.00) {
-						scorecompras = 20;
+						scorecompras = 60;
 					}
 				}
 			}
