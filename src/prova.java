@@ -36,7 +36,7 @@ public class prova {
 		if(compras == 0.00) {
 			scorecompras = 0;
 		}else {
-			if(compras <= 3000.00 && qntd >= 2) {
+			if(compras <= 3000.00 && qntd > 2) {
 				scorecompras = 40;
 			}else {
 				if(compras <= 3000.00) {
@@ -50,7 +50,7 @@ public class prova {
 			}
 		}
 		System.out.printf("%nScore de volume de compras = %d pontos%n", scorecompras);
-		
+	
 
 		sc.close();
 	}
