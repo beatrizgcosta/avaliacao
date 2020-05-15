@@ -9,10 +9,12 @@ public class prova {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int qntd, atraso, scorecompras;
+		int qntd, atraso, scorecompras, scoreinadimplencia, scorepagamento;
 		double ticket, compras;
 		char pagamento;
 		scorecompras = 0;
+		scoreinadimplencia = 0;
+		scorepagamento = 0;
 		
 		//CABEÇALHO
 		System.out.println("SISTEMA DE PERFIL DE CLIENTE");
@@ -50,7 +52,29 @@ public class prova {
 			}
 		}
 		System.out.printf("%nScore de volume de compras = %d pontos%n", scorecompras);
-	
+
+		//score inadimplencia
+		
+		if(atraso > 1 || qntd == 0) {
+			scoreinadimplencia = 0;
+		}else {
+			if(qntd > 0 && atraso == 1) {
+				scoreinadimplencia = 15;
+			}else {
+				if(qntd > 0 && atraso == 0) {
+					scoreinadimplencia = 30;
+				}
+			}
+		}
+		System.out.printf("%nScore de inadimplência = %d pontos%n", scoreinadimplencia);
+		
+		//score de pagamento
+		if (pagamento == 'd' || pagamento == 'D') {
+			scorepagamento = 5;
+		}else {
+			scorepagamento = 10;
+		}
+		System.out.printf("Score de forma de pagamento = %d pontos%n", scorepagamento);
 
 		sc.close();
 	}
