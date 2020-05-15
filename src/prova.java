@@ -9,9 +9,10 @@ public class prova {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int qntd, atraso;
-		double ticket;
+		int qntd, atraso, scorecompras;
+		double ticket, compras;
 		char pagamento;
+		scorecompras = 0;
 		
 		//CABEÇALHO
 		System.out.println("SISTEMA DE PERFIL DE CLIENTE");
@@ -30,6 +31,25 @@ public class prova {
 		System.out.printf("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)? ");
 		pagamento = sc.next().charAt(0);
 		
+		//calculo score compras
+		compras = qntd * ticket;
+		if(compras == 0.00) {
+			scorecompras = 0;
+		}else {
+			if(compras <= 3000.00 && qntd >= 2) {
+				scorecompras = 40;
+			}else {
+				if(compras <= 3000.00) {
+					scorecompras = 20;
+				}
+				else {
+					if(compras > 3000.00) {
+						scorecompras = 20;
+					}
+				}
+			}
+		}
+		System.out.printf("%nScore de volume de compras = %d pontos%n", scorecompras);
 		
 
 		sc.close();
